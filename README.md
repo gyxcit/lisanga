@@ -1,16 +1,53 @@
-# React + Vite
+# Lisanga 🤝
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Lisanga** est une application web bienveillante et sécurisée, conçue pour apporter un soutien psychologique, juridique et pratique aux victimes de violences basées sur le genre (VBG) en Afrique. 
 
-Currently, two official plugins are available:
+Le mot "Lisanga" signifie "rassemblement" ou "communauté" en Lingala, symbolisant l'union et l'entraide face aux épreuves.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Fonctionnalités
 
-## React Compiler
+*   **Chat IA Bienveillant** : Un assistant intelligent et empathique (propulsé par Mistral AI) disponible 24/7 pour écouter, conseiller et orienter les victimes de façon 100% anonyme.
+*   **Annuaire d'Urgence** : Accès rapide aux numéros d'urgence de la police, de la gendarmerie et des urgences médicales par pays.
+*   **Aide Psychologique** : Mise en relation sécurisée avec des professionnels et répertoire d'ONG locales (Croix-Rouge, MSF, Fondation Panzi).
+*   **Droits & Démarches** : Un guide complet des lois et procédures pénales par pays africain pour accompagner les victimes dans leurs démarches juridiques.
+*   **Bouton Panique** : Un bouton d'urgence permanent (en rouge) permettant de masquer instantanément l'application et de verrouiller l'interface en cas de danger immédiat.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Technologies utilisées
 
-## Expanding the ESLint configuration
+*   **Frontend** : React.js (via Vite)
+*   **Styling** : CSS natif avec des variables CSS globales pour une maintenance facile.
+*   **Icônes** : Lucide React
+*   **Intelligence Artificielle** : API Mistral AI (`mistral-small-latest`)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Installation en local
+
+1.  **Cloner le dépôt** :
+    ```bash
+    git clone https://github.com/votre-nom/lisanga.git
+    cd lisanga
+    ```
+
+2.  **Installer les dépendances** :
+    ```bash
+    npm install
+    ```
+
+3.  **Configurer la variable d'environnement** :
+    Créez un fichier `.env` à la racine du projet et ajoutez votre clé API Mistral :
+    ```env
+    VITE_MISTRAL_API_KEY=votre_cle_secrete_ici
+    ```
+
+4.  **Lancer le serveur de développement** :
+    ```bash
+    npm run dev
+    ```
+
+## 🌍 Déploiement
+
+Ce projet est optimisé pour être déployé très facilement sur **Netlify**. Le fichier `netlify.toml` est déjà configuré. 
+Lors du déploiement, assurez-vous de bien ajouter la variable d'environnement `VITE_MISTRAL_API_KEY` dans les paramètres de votre hébergeur (Netlify, Vercel, etc.).
+
+---
+
+*L'application a été développée avec cœur pour apporter un réel soutien technologique à une cause humaine vitale.* ❤️
