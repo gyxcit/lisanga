@@ -1,0 +1,167 @@
+[
+  {
+    "country": "Universel (Règles générales)",
+    "steps": [
+      { "title": "1. Se mettre en sécurité", "desc": "Éloignez-vous de la source du danger. Allez chez un proche, dans un lieu public sécurisé ou un commissariat." },
+      { "title": "2. Soins médicaux immédiats (Dans les 72h)", "desc": "Allez à l'hôpital. Demandez un 'Certificat Médical' descriptif des lésions physiques et psychologiques. En cas de viol, ne vous lavez pas et ne changez pas de vêtements avant l'examen médical pour conserver les preuves biologiques (ADN, fluides)." },
+      { "title": "3. Conserver les preuves", "desc": "Gardez les messages menaçants (SMS, WhatsApp), les photos des blessures, les vêtements déchirés dans un sac en papier (pas en plastique), et notez les noms des témoins éventuels." },
+      { "title": "4. Porter plainte", "desc": "Rendez-vous à la police ou à la gendarmerie. Vous avez le droit d'être accompagnée par un avocat ou un membre d'une ONG spécialisée. Exigez toujours un récépissé (preuve) de votre plainte." }
+    ],
+    "laws": []
+  },
+  {
+    "country": "Sénégal",
+    "laws": [
+      {
+        "title": "Loi n° 2020-05 du 10 janvier 2020 modifiant la loi n° 65-60 du 21 juillet 1965 portant Code pénal",
+        "desc": "Cette loi criminalise de manière absolue le viol et la pédophilie en les érigeant en crimes et en substituant la réclusion criminelle aux anciens travaux forcés. Le viol simple est puni de 10 à 20 ans d'emprisonnement ferme. Les peines de réclusion criminelle à perpétuité s'appliquent lorsque le viol est accompagné d'actes de barbarie, de torture ou s'il entraîne le décès de la victime.",
+        "link": "https://justice.sec.gouv.sn/wp-content/uploads/2020/12/loi-2020-05-du-10-janvier-2020-criminalisant-les-actes-de-viol-et-de-pedophilie.pdf"
+      },
+      {
+        "title": "Loi n° 99-05 du 29 janvier 1999 modifiant le Code pénal",
+        "desc": "Cette loi incrimine de manière spécifique et sévère les mutilations génitales féminines (MGF/excision), le harcèlement sexuel et les violences domestiques physiques.",
+        "link": "https://sgbv-ihrda.uwazi.io/fr/entity/7xur2iqdfr/metadata?file=16262766154593nmjswns5m.pdf"
+      }
+    ]
+  },
+  {
+    "country": "Afrique du Sud",
+    "laws": [
+      {
+        "title": "Domestic Violence Amendment Act 14 of 2021",
+        "desc": "Cette loi révisée élargit la définition de la violence domestique pour inclure l'abus spirituel, l'abus des personnes âgées et les comportements coercitifs ou de contrôle continu. Elle autorise de façon inédite le dépôt électronique (e-mail) des demandes d'ordonnances de protection d'urgence.",
+        "link": "https://www.justice.gov.za/vg/gbv/nsp-gbvf-final-doc-04-05.pdf"
+      },
+      {
+        "title": "Criminal Law (Sexual Offences and Related Matters) Amendment Act 13 of 2021",
+        "desc": "Renforce le suivi et l'enregistrement public des délinquants sexuels, durcit les conditions d'obtention de la libération sous caution et harmonise les sanctions minimales pour agressions sexuelles graves.",
+        "link": ""
+      }
+    ]
+  },
+  {
+    "country": "Kenya",
+    "laws": [
+      {
+        "title": "Protection Against Domestic Violence Act (PADV) of 2015",
+        "desc": "Définit et prohibe de manière stricte toutes les formes de violences au sein du cadre domestique, y compris l'abus économique, verbal et émotionnel. Elle détaille le rôle de la police et la marche à suivre pour obtenir une ordonnance de protection civile.",
+        "link": "https://hakgbv1195.org/documents/education.pdf"
+      }
+    ]
+  },
+  {
+    "country": "Bénin",
+    "laws": [
+      {
+        "title": "Loi n° 2011-26 du 09 janvier 2012 portant prévention et répressions des violences faites aux femmes",
+        "desc": "Établit un cadre répressif complet contre l'ensemble des atteintes à l'intégrité physique, sexuelle, psychologique ou économique des femmes. Elle garantit l'accès de la victime à l'aide sociale d'urgence et à l'assistance juridictionnelle gratuite.",
+        "link": "https://assemblee-nationale.bj/wp-content/uploads/2020/03/loi-portant-prevention-et-repression-des-violences-faites-aux-femmes.pdf"
+      },
+      {
+        "title": "Loi n° 2021-11 du 20 décembre 2021 portant dispositions spéciales de répression des infractions commises à raison du sexe",
+        "desc": "Définit des peines spécifiques et transfère la compétence de jugement des cas graves de violences basées sur le genre (dont le viol sur mineures de moins de 13 ans) à la CRIET pour accélérer l'application des sanctions.",
+        "link": "https://knowledge.unwomen.org/sites/default/files/2024-10/a-79-322-submission-benin-fr.pdf"
+      }
+    ]
+  },
+  {
+    "country": "Burkina Faso",
+    "laws": [
+      {
+        "title": "Loi n° 061-2015/CNT portant prévention, répression et réparation des violences à l'égard des femmes et des filles et prise en charge des victimes",
+        "desc": "Instaure un cadre de protection globale en matière de violences physiques, psychologiques et scolaires. Elle oblige l'État à assurer la gratuité de l'aide sociale et la prise en charge médicale d'urgence des victimes de violences physiques ou sexuelles.",
+        "link": "https://gbvaor.net/sites/default/files/2022-12/2022%20GBV%20Secondary%20Data%20Review%20Burkina%20Faso%20_final_WCAR-UNFPA-REGA_0.pdf"
+      }
+    ]
+  },
+  {
+    "country": "Tunisie",
+    "laws": [
+      {
+        "title": "Loi organique n° 2017-58 du 11 août 2017 relative à l'élimination de la violence à l'égard des femmes",
+        "desc": "Prohibe et pénalise de façon globale toutes les formes de violence à l'égard des femmes (physique, morale, sexuelle, politique ou économique). Elle abroge l'article du Code pénal qui permettait d'éteindre l'action publique si l'auteur épousait la victime mineure de son agression.",
+        "link": "https://legislation-securite.tn/latest-laws/loi-organique-n-2017-58-du-11-aout-2017-relative-a-lelimination-de-la-violence-a-legard-des-femmes/"
+      },
+      {
+        "title": "Guide sectoriel de prise en charge des femmes victimes de violences au sein de l'institution sanitaire",
+        "desc": "Définit les obligations éthiques et opérationnelles de prise en charge décente, de secret médical, de recueil des données et d'orientation d'urgence des patientes au sein du système de santé tunisien.",
+        "link": "http://www.gbo.tn/sites/default/files/2022-06/GUIDE%20SANTE.pdf"
+      }
+    ]
+  },
+  {
+    "country": "Gabon",
+    "laws": [
+      {
+        "title": "Loi n° 006/2021 du 6 septembre 2021 portant élimination des violences faites aux femmes",
+        "desc": "Cette loi-cadre spécifique criminalise l'ensemble des formes de violences domestiques et de discriminations familiales. Elle impose aux juridictions de désigner des magistrats spécialisés chargés exclusivement du traitement diligent des dossiers de violences faites aux femmes.",
+        "link": "https://citoyennesengagees.org/textes-de-lois/fiche-pratique--loi-ndeg006-2021-portant-sur-lelimination-des-violences-faites-aux-femmes"
+      }
+    ]
+  },
+  {
+    "country": "République Démocratique du Congo",
+    "laws": [
+      {
+        "title": "Loi n° 06/018 du 20 juillet 2006 modifiant et complétant le Décret du 30 janvier 1940 portant Code pénal congolais",
+        "desc": "Définit et pénalise de manière stricte le viol, l'attentat à la pudeur, le proxénétisme, la grossesse forcée et la stérilisation forcée. Le viol est passible de peines de servitude pénale de 5 à 20 ans, le minimum étant doublé en cas de liens familiaux ou d'autorité parentale.",
+        "link": "https://faolex.fao.org/docs/pdf/cng210037.pdf"
+      },
+      {
+        "title": "Loi n° 22/065 du 26 décembre 2022 fixant les principes fondamentaux relatifs à la protection et à la réparation des victimes de violences sexuelles liées aux conflits",
+        "desc": "Instaure un statut légal de protection et un droit d'accès prioritaire à des mesures de réparation physique, psychologique et pécuniaire financées par le fonds national souverain pour les victimes de violences sexuelles de guerre.",
+        "link": "https://natlex.ilo.org/dyn/natlex2/natlex2/files/download/115873/COD-115873.pdf"
+      }
+    ]
+  },
+  {
+    "country": "Cameroun",
+    "laws": [
+      {
+        "title": "Loi n° 2016/007 du 12 juillet 2016 portant Code pénal - Article 356",
+        "desc": "Pénalise sévèrement la contrainte au mariage. Toute personne physique reconnue coupable d'avoir forcé ou facilité le mariage d'une personne sans son consentement est passible d'une peine de prison de cinq à dix ans d'emprisonnement et d'une amende pénale.",
+        "link": "https://www.fluechtlingshilfe.ch/fileadmin/user_upload/Publikationen/Herkunftslaenderberichte/Afrika/Kamerun/230414_KAM_mariage_force_feminicide.pdf"
+      }
+    ]
+  },
+  {
+    "country": "Rwanda",
+    "laws": [
+      {
+        "title": "Loi n° 59/2008 du 10/09/2008 relative à la prévention et à la répression de la violence basée sur le genre",
+        "desc": "Instaure une définition large de la violence de genre et détermine des peines de prison et d'amendes sévères contre le viol conjugal, le harcèlement sexuel en milieu professionnel, la polygamie forcée, ainsi que la privation arbitraire de l'accès au patrimoine familial.",
+        "link": "https://www.gov.uk/government/publications/rwanda-information-for-victims-of-rape-and-sexual-assault/rwanda-information-for-victims-of-rape-and-sexual-assault"
+      }
+    ]
+  },
+  {
+    "country": "Guinée",
+    "laws": [
+      {
+        "title": "Loi L/2016/059/AN portant Code pénal guinéen - Dispositions répressives contre le viol et les mutilations génitales",
+        "desc": "Pénalise de manière stricte le viol et réprime l'excision sous toutes ses formes. Elle sert de base légale au déclenchement des poursuites policières à la suite d'un signalement d'urgence via la ligne nationale d'assistance sociale.",
+        "link": "https://www.interfacelonny.org/storage/documents/do-1636188263/document_1636188652.pdf"
+      }
+    ]
+  },
+  {
+    "country": "Madagascar",
+    "laws": [
+      {
+        "title": "Loi n° 2019-008 relative à la lutte contre les violences basées sur le genre",
+        "desc": "Instaure un cadre légal criminalisant le viol et pénalisant les agressions intrafamiliales physiques ou psychologiques. Elle encadre l'élaboration d'un décret d'application pour les protocoles de dénonciation et d'orientation d'urgence des victimes vers les structures de soins.",
+        "link": "https://www.medecinsdumonde.org/app/uploads/2024/09/Etude-MDM-Barrieres-dacces-aux-services-VBG-Sud-Madagascar.pdf"
+      }
+    ]
+  },
+  {
+    "country": "Nigeria",
+    "laws": [
+      {
+        "title": "Violence Against Persons (Prohibition) (VAPP) Act of 2015",
+        "desc": "Cette loi-cadre moderne incrimine de façon exhaustive le viol, la violence domestique, l'abandon de foyer, l'excision et les rites de veuvage cruels. Elle donne mandat légal à l'organisme NAPTIP de poursuivre les coupables et d'administrer les centres de prise en charge.",
+        "link": "https://publications.iom.int/system/files/pdf/tot_borno_and_adamawa.pdf"
+      }
+    ]
+  }
+]

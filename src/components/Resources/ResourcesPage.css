@@ -1,0 +1,129 @@
+.resources-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-dawn);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.resources-header {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  color: var(--color-forest);
+  font-weight: 700;
+  margin: 0;
+}
+
+.resources-main {
+  flex: 1;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.resources-content-wrapper {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.resources-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--color-muted);
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.resource-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-light);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.resource-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-leaf);
+}
+
+.card-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.resource-card h2 {
+  font-size: 1.4rem;
+  color: var(--color-forest);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.resource-card p {
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.card-arrow {
+  margin-top: 24px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s;
+}
+
+.resource-card:hover .card-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .resources-header {
+    padding: 16px 20px;
+  }
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+  .resource-card {
+    padding: 30px 20px;
+  }
+}

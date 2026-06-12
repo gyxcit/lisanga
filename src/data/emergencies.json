@@ -1,0 +1,175 @@
+[
+  {
+    "country": "Sénégal",
+    "police": "17",
+    "gendarmerie": "800 00 20 20",
+    "hotlines": [
+      { "name": "Ligne Verte Nationale d'Urgence VBG", "number": "116" }
+    ],
+    "ngos": [
+      { "name": "Association des Juristes Sénégalaises (AJS)", "contact": "+221 33 822 51 04", "desc": "Offre une assistance juridique gratuite, une écoute psychologique et gère des boutiques de droit pour l'orientation des victimes." }
+    ]
+  },
+  {
+    "country": "Afrique du Sud",
+    "police": "10111",
+    "gendarmerie": "",
+    "hotlines": [
+      { "name": "Gender-Based Violence Command Centre", "number": "0800 428 428" },
+      { "name": "Stop Gender Violence Helpline", "number": "0800 150 150" }
+    ],
+    "ngos": [
+      { "name": "People Opposed to Women Abuse (POWA)", "contact": "+27 11 642 4345", "desc": "Fournit un hébergement d'urgence, des conseils psychologiques et des services d'aide juridique pour les femmes victimes d'abus." },
+      { "name": "Tears Foundation", "contact": "+27 10 590 5920", "desc": "Assistance d'urgence pour les victimes de viol et de violences sexuelles, accès à un réseau de soins médicaux et de soutien." }
+    ]
+  },
+  {
+    "country": "Kenya",
+    "police": "999",
+    "gendarmerie": "",
+    "hotlines": [
+      { "name": "National GBV Helpline", "number": "1195" },
+      { "name": "LVCT Counseling Hotline", "number": "1190" }
+    ],
+    "ngos": [
+      { "name": "Federation of Women Lawyers (FIDA Kenya)", "contact": "+254 722 509 760", "desc": "Fournit une aide juridictionnelle gratuite et un soutien psychosocial d'urgence aux femmes confrontées aux violences." },
+      { "name": "Gender Violence Recovery Centre (GVRC)", "contact": "0800 720 565", "desc": "Prestation de soins médicaux gratuits, traitement des traumatismes et accompagnement judiciaire pour les survivantes." }
+    ]
+  },
+  {
+    "country": "Burkina Faso",
+    "police": "17",
+    "gendarmerie": "16",
+    "hotlines": [
+      { "name": "Numéro Vert d'Alerte et de Dénonciation VBG", "number": "80 00 12 87" }
+    ],
+    "ngos": [
+      { "name": "ONIDS", "contact": "+226 70 12 40 45", "desc": "Soutien opérationnel dans la prise en charge, la sensibilisation et le référencement des survivantes de violences basées sur le genre." }
+    ]
+  },
+  {
+    "country": "Côte d'Ivoire",
+    "police": "111",
+    "gendarmerie": "170",
+    "hotlines": [
+      { "name": "Numéro Vert National PNLVBG", "number": "1308" }
+    ],
+    "ngos": [
+      { "name": "Programme National de Lutte contre les Violences Basées sur le Genre", "contact": "+225 05 02 64 23 23", "desc": "Coordonne le soutien psychologique, l'accueil, l'écoute et l'orientation des victimes vers les structures de soins." }
+    ]
+  },
+  {
+    "country": "Tunisie",
+    "police": "197",
+    "gendarmerie": "193",
+    "hotlines": [
+      { "name": "Numéro Vert Violences Femmes", "number": "80 100 10" },
+      { "name": "Ligne d'Assistance Psychologique", "number": "1809" }
+    ],
+    "ngos": [
+      { "name": "Association Tunisie des Femmes Démocrates (ATFD)", "contact": "+216 71 890 010", "desc": "Prise en charge globale des victimes via un centre d'écoute, une assistance juridique continue et un hébergement d'urgence." }
+    ]
+  },
+  {
+    "country": "Gabon",
+    "police": "177",
+    "gendarmerie": "",
+    "hotlines": [
+      { "name": "Numéro d'Urgence National VBG", "number": "1404" }
+    ],
+    "ngos": [
+      { "name": "Centre d'Accueil Gabon Égalité", "contact": "1404", "desc": "Infrastructures d'hébergement temporaire et de prise en charge intégrée médicale, judiciaire, sociale et psychologique." }
+    ]
+  },
+  {
+    "country": "République Démocratique du Congo",
+    "police": "112",
+    "gendarmerie": "",
+    "hotlines": [
+      { "name": "Ligne Verte de Signalement VBG", "number": "495555" }
+    ],
+    "ngos": [
+      { "name": "Solidarité Féminine pour la Paix et le Développement Intégral (SOFEPADI)", "contact": "+243 817 107 546", "desc": "Défense des droits des femmes, clinique médicale spécialisée dans la prise en charge des victimes de violences sexuelles de guerre." }
+    ]
+  },
+  {
+    "country": "Rwanda",
+    "police": "112",
+    "gendarmerie": "",
+    "hotlines": [
+      { "name": "Ligne Urgence VBG Police Nationale", "number": "3512" },
+      { "name": "Isange One Stop Centre Assistance", "number": "3029" }
+    ],
+    "ngos": [
+      { "name": "Isange One Stop Centre (Kacyiru)", "contact": "3029", "desc": "Centre public de référence offrant un accompagnement holistique gratuit, incluant soins médicaux, soutien psychologique et recueil de preuves judiciaires." },
+      { "name": "Haguruka", "contact": "+250 788 300 834", "desc": "Fournit une aide légale gratuite, une éducation aux droits et un accompagnement social des femmes et des enfants." }
+    ]
+  },
+  {
+    "country": "Guinée",
+    "police": "117",
+    "gendarmerie": "118",
+    "hotlines": [
+      { "name": "Ligne Verte de la Guinée", "number": "116" }
+    ],
+    "ngos": [
+      { "name": "Association Guinéenne des Assistantes Sociales (AGUIAS)", "contact": "116", "desc": "Gestionnaire de la ligne nationale d'écoute et d'aide sociale aux jeunes filles victimes de violences et de traite." }
+    ]
+  },
+  {
+    "country": "Mali",
+    "police": "17",
+    "gendarmerie": "18",
+    "hotlines": [
+      { "name": "Ligne Verte d'Urgence", "number": "2665" }
+    ],
+    "ngos": [
+      { "name": "One Stop Center de Bamako", "contact": "+223 74 36 77 15", "desc": "Assure la prise en charge médicale, judiciaire et le soutien social des femmes et des filles survivantes de violences sexuelles." }
+    ]
+  },
+  {
+    "country": "Togo",
+    "police": "117",
+    "gendarmerie": "118",
+    "hotlines": [
+      { "name": "Ligne Verte d'Urgence Nationale", "number": "8811" }
+    ],
+    "ngos": [
+      { "name": "PASHMUT Togo", "contact": "+228 22 25 81 86", "desc": "Coordination du plan d'action d'urgence, fourniture d'assistance psychologique et de kits de dignité pour les survivantes de VBG." }
+    ]
+  },
+  {
+    "country": "Djibouti",
+    "police": "17",
+    "gendarmerie": "18",
+    "hotlines": [
+      { "name": "Ligne Verte Nationale", "number": "1525" }
+    ],
+    "ngos": [
+      { "name": "CEIO / Ministère de la Femme", "contact": "1525", "desc": "Assure la réception d'appels, l'assistance psychologique immédiate et le référencement médical des femmes majeures et mineures victimes d'abus." }
+    ]
+  },
+  {
+    "country": "Madagascar",
+    "police": "117",
+    "gendarmerie": "119",
+    "hotlines": [
+      { "name": "Ligne Verte d'Écoute Nationale VBG", "number": "813" }
+    ],
+    "ngos": [
+      { "name": "Brigade Féminine de Proximité", "contact": "813", "desc": "Unité de police spécialisée dans l'accompagnement, la protection immédiate et le recueil confidentiel des plaintes des femmes victimes." }
+    ]
+  },
+  {
+    "country": "Nigeria",
+    "police": "112",
+    "gendarmerie": "",
+    "hotlines": [
+      { "name": "National GBV Helpline (ReportGBV)", "number": "0800 3333 3333" },
+      { "name": "NAPTIP Hotline", "number": "0703 0000 203" }
+    ],
+    "ngos": [
+      { "name": "Centre for Family Health Initiative (CFHI)", "contact": "+234 814 067 11 27", "desc": "Offre des thérapies de groupe, un soutien d'urgence aux familles et mène la campagne de sensibilisation et de dénonciation 'Speak Wednesday'." }
+    ]
+  }
+]
