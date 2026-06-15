@@ -171,5 +171,17 @@
     "ngos": [
       { "name": "Centre for Family Health Initiative (CFHI)", "contact": "+234 814 067 11 27", "desc": "Offre des thérapies de groupe, un soutien d'urgence aux familles et mène la campagne de sensibilisation et de dénonciation 'Speak Wednesday'." }
     ]
+  },
+  {
+    "country": "Maroc",
+    "police": "19",
+    "gendarmerie": "177",
+    "hotlines": [
+      { "name": "Police (depuis un mobile)", "number": "177" },
+      { "name": "Ambulance et secours médicaux", "number": "15" },
+      { "name": "Pompiers / Protection civile", "number": "15" },
+      { "name": "Allô Enfance en danger (enfants victimes de maltraitance ou en danger)", "number": "2511" }
+    ],
+    "ngos": []
   }
 ]

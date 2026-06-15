@@ -1,0 +1,52 @@
+|-- .claude
+    |-- settings.local.json
+|-- .gitignore
+|-- eslint.config.js
+|-- index.html
+|-- lancer-lisanga.bat
+|-- netlify.toml
+|-- package-lock.json
+|-- package.json
+|-- public
+    |-- background.mp4
+    |-- favicon.svg
+    |-- icons.svg
+|-- README.md
+|-- src
+    |-- App.jsx
+    |-- assets
+        |-- hero.png
+        |-- vite.svg
+    |-- components
+        |-- About
+            |-- AboutPage.css
+            |-- AboutPage.jsx
+        |-- Chat
+            |-- MistralChatInterface.css
+            |-- MistralChatInterface.jsx
+        |-- Landing
+            |-- HeroPage.css
+            |-- HeroPage.jsx
+        |-- Resources
+            |-- EmergencyDirectory.css
+            |-- EmergencyDirectory.jsx
+            |-- LegalRights.css
+            |-- LegalRights.jsx
+            |-- PsychologicalHelp.css
+            |-- PsychologicalHelp.jsx
+            |-- ResourcesPage.css
+            |-- ResourcesPage.jsx
+            |-- SupportGroups.css
+            |-- SupportGroups.jsx
+        |-- Safety
+            |-- PanicButton.css
+            |-- PanicButton.jsx
+        |-- SupportGroup
+            |-- RegistrationModal.css
+            |-- RegistrationModal.jsx
+    |-- data
+        |-- emergencies.json
+        |-- legal.json
+    |-- index.css
+    |-- main.jsx
+|-- vite.config.js

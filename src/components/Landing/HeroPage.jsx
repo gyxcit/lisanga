@@ -108,11 +108,11 @@ function HeroPage({ onStart, onNavigate }) {
         <section className="scroll-slide">
           <div className="slide-content text-left">
             <span className="slide-label">La Réalité</span>
-            <h2>En Afrique, près d'1 femme sur 3 subit des violences au cours de sa vie.</h2>
+            <h2>En Afrique, près d'une femme sur trois subit des violences au cours de sa vie.</h2>
             <p>
-              Les violences basées sur le genre sont un fléau silencieux. Les pressions sociales, 
-              la peur du jugement et la stigmatisation enferment souvent les survivant(e)s dans un isolement profond. 
-              Pourtant, vous n'êtes pas seul(e)s.
+              Les violences basées sur le genre sont un fléau silencieux. Les pressions sociales,
+              la peur du jugement et la stigmatisation enferment souvent les femmes survivantes dans un isolement profond.
+              Pourtant, vous n'êtes pas seules.
             </p>
             <div className="stat-cards">
               <div className="stat-card">
