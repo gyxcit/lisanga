@@ -1,13 +1,39 @@
 import { useState } from 'react';
-import { ArrowLeft, Phone, Heart, ExternalLink, Calendar, Shield, Clock } from 'lucide-react';
+import { ArrowLeft, Phone, Heart, ExternalLink, Calendar, Shield, Loader2 } from 'lucide-react';
 import './PsychologicalHelp.css';
+import { sendWeb3Form } from '../../utils/sendWeb3Form';
+
+const CONTACT_METHOD_LABELS = {
+  whatsapp: 'Message WhatsApp discret',
+  appel: 'Appel vocal',
+  signal: 'Message Signal (Très sécurisé)',
+};
 
 function PsychologicalHelp({ onBack }) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [method, setMethod] = useState('');
+  const [contact, setContact] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError('');
+    setLoading(true);
+    try {
+      await sendWeb3Form({
+        subject: 'Nouvelle demande de rendez-vous — Aide psychologique Lisanga',
+        fields: {
+          'Moyen de contact préféré': CONTACT_METHOD_LABELS[method] || method,
+          'Numéro / Identifiant': contact,
+        },
+      });
+      setSubmitted(true);
+    } catch {
+      setError("L'envoi a échoué. Vérifiez votre réseau et réessayez.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -56,17 +82,23 @@ function PsychologicalHelp({ onBack }) {
                 <form className="psy-intake-form" onSubmit={handleSubmit}>
                   <div className="form-group">
                     <label>Comment préférez-vous être contactée ?</label>
-                    <select required>
+                    <select required value={method} onChange={(e) => setMethod(e.target.value)}>
                       <option value="">Choisir une option...</option>
                       <option value="whatsapp">Message WhatsApp discret</option>
                       <option value="appel">Appel vocal</option>
                       <option value="signal">Message Signal (Très sécurisé)</option>
                     </select>
                   </div>
-                  
+
                   <div className="form-group">
                     <label>Numéro de téléphone / Identifiant</label>
-                    <input type="text" placeholder="+221 ..." required />
+                    <input
+                      type="text"
+                      placeholder="+221 ..."
+                      required
+                      value={contact}
+                      onChange={(e) => setContact(e.target.value)}
+                    />
                   </div>
 
                   <div className="form-group checkbox-group">
@@ -74,8 +106,16 @@ function PsychologicalHelp({ onBack }) {
                     <label htmlFor="safe-time">Je confirme que c'est mon numéro personnel et qu'il est sûr de me contacter.</label>
                   </div>
 
-                  <button type="submit" className="btn-request-psy">
-                    Demander un rendez-vous gratuit
+                  {error && <p className="form-error">{error}</p>}
+
+                  <button type="submit" className="btn-request-psy" disabled={loading}>
+                    {loading ? (
+                      <span className="btn-loading">
+                        <Loader2 size={18} className="spin" /> Envoi en cours...
+                      </span>
+                    ) : (
+                      'Demander un rendez-vous gratuit'
+                    )}
                   </button>
                 </form>
               ) : (

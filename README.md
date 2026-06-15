@@ -11,6 +11,7 @@ Le mot "Lisanga" signifie "rassemblement" ou "communauté" en Lingala, symbolisa
 *   **Aide Psychologique** : Mise en relation sécurisée avec des professionnels et répertoire d'ONG locales (Croix-Rouge, MSF, Fondation Panzi).
 *   **Droits & Démarches** : Un guide complet des lois et procédures pénales par pays africain pour accompagner les victimes dans leurs démarches juridiques.
 *   **Bouton Panique** : Un bouton d'urgence permanent (en rouge) permettant de masquer instantanément l'application et de verrouiller l'interface en cas de danger immédiat.
+*   **Demandes par email** : Les formulaires de demande de contact (groupes de soutien et aide psychologique) envoient automatiquement les coordonnées laissées par les utilisatrices vers une boîte mail, via **Web3Forms** (gratuit, sans serveur). Le chat reste, lui, totalement anonyme et n'est jamais transmis.
 
 ## 🛠 Technologies utilisées
 
@@ -32,21 +33,46 @@ Le mot "Lisanga" signifie "rassemblement" ou "communauté" en Lingala, symbolisa
     npm install
     ```
 
-3.  **Configurer la variable d'environnement** :
-    Créez un fichier `.env` à la racine du projet et ajoutez votre clé API Mistral :
+3.  **Configurer les variables d'environnement** :
+    Copiez le fichier `.env.example` en `.env` à la racine du projet, puis renseignez les deux clés :
     ```env
-    VITE_MISTRAL_API_KEY=votre_cle_secrete_ici
+    # Clé API Mistral AI (chat) — https://console.mistral.ai/
+    VITE_MISTRAL_API_KEY=votre_cle_mistral_ici
+
+    # Clé d'accès Web3Forms (réception des demandes par email) — https://web3forms.com/
+    VITE_WEB3FORMS_KEY=votre_cle_web3forms_ici
     ```
+    > La clé Web3Forms s'obtient gratuitement : entrez votre email sur [web3forms.com](https://web3forms.com/) pour la recevoir. Elle n'est pas secrète (elle sert uniquement à router les envois vers votre boîte mail).
 
 4.  **Lancer le serveur de développement** :
     ```bash
     npm run dev
     ```
 
+## 📩 Réception des demandes par email (Web3Forms)
+
+Les formulaires où une utilisatrice laisse un moyen de contact envoient leurs données par email, sans backend, grâce à [Web3Forms](https://web3forms.com/) :
+
+| Formulaire | Emplacement | Objet du mail reçu |
+| --- | --- | --- |
+| Inscription groupe (modal) | `RegistrationModal.jsx` | *Nouvelle demande de contact — Groupe de soutien Lisanga* |
+| Rejoindre un groupe | `Resources/SupportGroups.jsx` | *Nouvelle demande d'accès — Groupe de soutien Lisanga* |
+| Rendez-vous psychologique | `Resources/PsychologicalHelp.jsx` | *Nouvelle demande de rendez-vous — Aide psychologique Lisanga* |
+
+La logique d'envoi est centralisée dans [`src/utils/sendWeb3Form.js`](src/utils/sendWeb3Form.js). Tous les formulaires partagent la clé `VITE_WEB3FORMS_KEY` et envoient vers la même boîte mail.
+
+> ⚠️ **Le chat (`MistralChatInterface.jsx`) est volontairement exclu** : l'application promet un anonymat total, les conversations ne sont donc jamais envoyées par email.
+
+**Bon à savoir :**
+*   Service **100 % gratuit et illimité**, sans carte bancaire.
+*   Web3Forms refuse les envois côté serveur sur l'offre gratuite : c'est sans impact, l'application envoie toujours depuis le navigateur.
+*   Pour recevoir les demandes sur **une autre adresse**, générez une nouvelle clé Web3Forms avec cet email et remplacez `VITE_WEB3FORMS_KEY`.
+*   L'ajout de destinataires en copie (`ccemail`) est une fonctionnalité payante (PRO) ; une règle de transfert Gmail fait la même chose gratuitement.
+
 ## 🌍 Déploiement
 
 Ce projet est optimisé pour être déployé très facilement sur **Netlify**. Le fichier `netlify.toml` est déjà configuré. 
-Lors du déploiement, assurez-vous de bien ajouter la variable d'environnement `VITE_MISTRAL_API_KEY` dans les paramètres de votre hébergeur (Netlify, Vercel, etc.).
+Lors du déploiement, assurez-vous de bien ajouter les variables d'environnement `VITE_MISTRAL_API_KEY` **et** `VITE_WEB3FORMS_KEY` dans les paramètres de votre hébergeur (Netlify, Vercel, etc.), puis redéployez le site.
 
 ---
 

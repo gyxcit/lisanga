@@ -1,16 +1,34 @@
 import { useState } from 'react';
-import { ArrowLeft, Users, Shield, UserCircle, Phone } from 'lucide-react';
+import { ArrowLeft, Users, Shield, UserCircle, Phone, Loader2 } from 'lucide-react';
 import './SupportGroups.css';
+import { sendWeb3Form } from '../../utils/sendWeb3Form';
 
 function SupportGroups({ onBack }) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (name && phone) {
+    if (!name || !phone) return;
+
+    setError('');
+    setLoading(true);
+    try {
+      await sendWeb3Form({
+        subject: "Nouvelle demande d'accès — Groupe de soutien Lisanga",
+        fields: {
+          'Prénom / Pseudonyme': name,
+          'Numéro de téléphone': phone,
+        },
+      });
       setSubmitted(true);
+    } catch {
+      setError("L'envoi a échoué. Vérifiez votre réseau et réessayez.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -79,7 +97,17 @@ function SupportGroups({ onBack }) {
                     </div>
                   </div>
 
-                  <button type="submit" className="btn-submit-group">Demander l'accès au groupe</button>
+                  {error && <p className="form-error">{error}</p>}
+
+                  <button type="submit" className="btn-submit-group" disabled={loading}>
+                    {loading ? (
+                      <span className="btn-loading">
+                        <Loader2 size={18} className="spin" /> Envoi en cours...
+                      </span>
+                    ) : (
+                      "Demander l'accès au groupe"
+                    )}
+                  </button>
                 </form>
               </>
             ) : (

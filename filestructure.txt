@@ -1,5 +1,7 @@
 |-- .claude
     |-- settings.local.json
+|-- .env
+|-- .env.example
 |-- .gitignore
 |-- eslint.config.js
 |-- index.html
@@ -49,4 +51,6 @@
         |-- legal.json
     |-- index.css
     |-- main.jsx
+    |-- utils
+        |-- sendWeb3Form.js
 |-- vite.config.js

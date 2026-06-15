@@ -1,19 +1,36 @@
 import { useState } from 'react';
-import { X, CheckCircle } from 'lucide-react';
+import { X, CheckCircle, Loader2 } from 'lucide-react';
 import './RegistrationModal.css';
+import { sendWeb3Form } from '../../utils/sendWeb3Form';
 
 function RegistrationModal({ onClose }) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [formData, setFormData] = useState({ pseudo: '', contact: '' });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In a real app, this sends data to the secure backend DB
-    console.log("Sending to secure DB:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      onClose();
-    }, 3000);
+    setError('');
+    setLoading(true);
+
+    try {
+      await sendWeb3Form({
+        subject: 'Nouvelle demande de contact — Groupe de soutien Lisanga',
+        fields: {
+          'Prénom / Pseudonyme': formData.pseudo,
+          'Contact sûr': formData.contact,
+        },
+      });
+      setSubmitted(true);
+      setTimeout(() => {
+        onClose();
+      }, 3000);
+    } catch {
+      setError("L'envoi a échoué. Vérifiez votre réseau et réessayez.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -27,16 +44,16 @@ function RegistrationModal({ onClose }) {
           <>
             <h2>Groupes de Soutien</h2>
             <p className="modal-desc">
-              Ces groupes réels sont animés par des professionnels. Laissez un contact sécurisé pour qu'une association locale puisse vous joindre. 
+              Ces groupes réels sont animés par des professionnels. Laissez un contact sécurisé pour qu'une association locale puisse vous joindre.
               <strong> Cette information ne sera jamais liée à votre discussion.</strong>
             </p>
-            
+
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label>Prénom ou Pseudonyme</label>
-                <input 
-                  type="text" 
-                  required 
+                <input
+                  type="text"
+                  required
                   value={formData.pseudo}
                   onChange={(e) => setFormData({ ...formData, pseudo: e.target.value })}
                   placeholder="Ex: Amina"
@@ -44,15 +61,26 @@ function RegistrationModal({ onClose }) {
               </div>
               <div className="form-group">
                 <label>Numéro ou Email sûr</label>
-                <input 
-                  type="text" 
-                  required 
+                <input
+                  type="text"
+                  required
                   value={formData.contact}
                   onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
                   placeholder="Ex: +221..."
                 />
               </div>
-              <button type="submit" className="submit-btn">Demander à être contacté</button>
+
+              {error && <p className="form-error">{error}</p>}
+
+              <button type="submit" className="submit-btn" disabled={loading}>
+                {loading ? (
+                  <span className="btn-loading">
+                    <Loader2 size={18} className="spin" /> Envoi en cours...
+                  </span>
+                ) : (
+                  'Demander à être contactée'
+                )}
+              </button>
             </form>
           </>
         ) : (
