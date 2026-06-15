@@ -37,7 +37,8 @@ Le mot "Lisanga" signifie "rassemblement" ou "communauté" en Lingala, symbolisa
     Copiez le fichier `.env.example` en `.env` à la racine du projet, puis renseignez les deux clés :
     ```env
     # Clé API Mistral AI (chat) — https://console.mistral.ai/
-    VITE_MISTRAL_API_KEY=votre_cle_mistral_ici
+    # ⚠️ PAS de préfixe VITE_ : cette clé reste côté serveur, jamais exposée au navigateur.
+    MISTRAL_API_KEY=votre_cle_mistral_ici
 
     # Clé d'accès Web3Forms (réception des demandes par email) — https://web3forms.com/
     VITE_WEB3FORMS_KEY=votre_cle_web3forms_ici
@@ -46,8 +47,14 @@ Le mot "Lisanga" signifie "rassemblement" ou "communauté" en Lingala, symbolisa
 
 4.  **Lancer le serveur de développement** :
     ```bash
+    # Pour travailler l'interface uniquement (le chat IA ne répondra pas) :
     npm run dev
+
+    # Pour TOUT faire fonctionner localement, y compris le chat IA :
+    # (nécessite la CLI Netlify : npm i -g netlify-cli, ou utilisez npx netlify-cli dev)
+    npm run dev:netlify
     ```
+    > Le chat passe par une fonction serverless (`netlify/functions/chat.js`). En local, seule la commande `netlify dev` la rend disponible sur `/api/chat`. Avec `npm run dev` (Vite seul), l'interface s'affiche mais le chat renverra une erreur de connexion — c'est normal.
 
 ## 📩 Réception des demandes par email (Web3Forms)
 
@@ -69,10 +76,29 @@ La logique d'envoi est centralisée dans [`src/utils/sendWeb3Form.js`](src/utils
 *   Pour recevoir les demandes sur **une autre adresse**, générez une nouvelle clé Web3Forms avec cet email et remplacez `VITE_WEB3FORMS_KEY`.
 *   L'ajout de destinataires en copie (`ccemail`) est une fonctionnalité payante (PRO) ; une règle de transfert Gmail fait la même chose gratuitement.
 
+## 🔒 Sécurité
+
+L'accès à l'IA et l'application sont protégés sur plusieurs niveaux :
+
+*   **Clé Mistral jamais exposée** : l'appel à Mistral passe par une fonction serverless ([`netlify/functions/chat.js`](netlify/functions/chat.js)). La clé `MISTRAL_API_KEY` reste côté serveur — impossible de la voler depuis le navigateur pour abuser de l'IA aux frais du projet.
+*   **Garde-fous de l'IA** : le prompt système (côté serveur, non modifiable) cadre le rôle de Lisanga. Elle refuse poliment les usages détournés (assistant généraliste, jailbreak, changement de rôle) et ne révèle jamais ses instructions.
+*   **Limites anti-abus** : la fonction limite le débit par IP (rate limiting), borne la longueur des messages et la taille de l'historique. Le champ de saisie est également plafonné côté client.
+*   **En-têtes de sécurité HTTP** : définis dans `netlify.toml` (CSP, anti-clickjacking `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, HSTS…).
+
+> ℹ️ Le limiteur de débit est en mémoire (best-effort par instance). Pour un blocage strict à grande échelle, brancher un store partagé (Netlify Blobs, Upstash Redis…).
+
 ## 🌍 Déploiement
 
-Ce projet est optimisé pour être déployé très facilement sur **Netlify**. Le fichier `netlify.toml` est déjà configuré. 
-Lors du déploiement, assurez-vous de bien ajouter les variables d'environnement `VITE_MISTRAL_API_KEY` **et** `VITE_WEB3FORMS_KEY` dans les paramètres de votre hébergeur (Netlify, Vercel, etc.), puis redéployez le site.
+Ce projet est optimisé pour être déployé très facilement sur **Netlify**. Le fichier `netlify.toml` est déjà configuré (fonctions + en-têtes de sécurité).
+
+Lors du déploiement, ajoutez les variables d'environnement dans *Site settings → Environment variables*, puis redéployez :
+
+| Variable | Rôle | Exposée au navigateur ? |
+| --- | --- | --- |
+| `MISTRAL_API_KEY` | Clé du chat IA (proxy serverless) | ❌ Non (secrète) |
+| `VITE_WEB3FORMS_KEY` | Réception des demandes par email | ✅ Oui (non secrète) |
+
+> ⚠️ Si vous migrez depuis une ancienne version : renommez `VITE_MISTRAL_API_KEY` en `MISTRAL_API_KEY` (sans le préfixe `VITE_`), sinon la clé resterait exposée publiquement.
 
 ---
 

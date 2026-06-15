@@ -6,6 +6,9 @@
 |-- eslint.config.js
 |-- index.html
 |-- lancer-lisanga.bat
+|-- netlify
+    |-- functions
+        |-- chat.js
 |-- netlify.toml
 |-- package-lock.json
 |-- package.json

@@ -7,12 +7,14 @@ function MistralChatInterface({ onOpenSupport, onBack }) {
     {
       id: 1,
       sender: 'ai',
-      text: "Bonjour. Cet espace est privé, sécurisé, et rien de ce que tu diras ici ne sera enregistré. Comment te sens-tu aujourd'hui ?"
+      text: "Coucou, je suis contente que tu sois là. Prends ton temps, il n'y a rien que tu doives me dire avant d'être prête. Comment tu te sens, là, maintenant ?"
     }
   ]);
   const [inputText, setInputText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const containerRef = useRef(null);
+
+  const MAX_INPUT_LENGTH = 2000;
 
   const scrollToBottom = () => {
     if (containerRef.current) {
@@ -24,67 +26,53 @@ function MistralChatInterface({ onOpenSupport, onBack }) {
     scrollToBottom();
   }, [messages, isTyping]);
 
-  const callMistralAPI = async (userText, previousMessages) => {
-    const apiKey = import.meta.env.VITE_MISTRAL_API_KEY;
-    
-    if (!apiKey || apiKey === 'votre_cle_api_ici_mistral') {
-      return "Désolé, la clé API Mistral n'est pas configurée correctement.";
-    }
-
+  const callAI = async (userText, previousMessages) => {
     try {
-      // Build conversation history for context
-      const formattedMessages = [
-        { role: "system", content: "Tu es Lisanga, une assistante bienveillante, sécurisante et empathique, spécialisée dans le soutien aux victimes de violences basées sur le genre en Afrique. Ton rôle est d'écouter, de valider les émotions sans juger, et d'orienter vers les ressources de l'application si besoin. Réponds de manière concise, chaleureuse et utilise le tutoiement respectueux." }
-      ];
-      
-      previousMessages.forEach(msg => {
-        formattedMessages.push({
+      // Historique de conversation pour le contexte (le prompt système et la
+      // clé restent côté serveur, dans la Netlify Function /api/chat).
+      const history = previousMessages
+        .map((msg) => ({
           role: msg.sender === 'user' ? 'user' : 'assistant',
-          content: msg.text
-        });
-      });
-      
-      formattedMessages.push({ role: "user", content: userText });
+          content: msg.text,
+        }))
+        .concat({ role: 'user', content: userText });
 
-      const response = await fetch("https://api.mistral.ai/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${apiKey}`
-        },
-        body: JSON.stringify({
-          model: "mistral-small-latest",
-          messages: formattedMessages,
-          temperature: 0.7
-        })
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: history }),
       });
+
+      if (response.status === 429) {
+        return "Tu m'écris un peu vite. Laisse-moi quelques secondes et réessaie, je reste là.";
+      }
 
       if (!response.ok) {
         throw new Error(`Erreur API: ${response.status}`);
       }
 
       const data = await response.json();
-      return data.choices[0].message.content;
+      return data.reply;
     } catch (error) {
-      console.error("Mistral API error:", error);
-      return "Je suis désolée, j'éprouve des difficultés à me connecter en ce moment. Prends ton temps, tu es en sécurité ici.";
+      console.error('Chat error:', error);
+      return "Je suis désolée, j'ai du mal à te répondre à l'instant. Reste avec moi un moment et réessaie dans quelques secondes.";
     }
   };
 
   const handleSend = async () => {
     if (!inputText.trim() || isTyping) return;
 
-    const textToProcess = inputText;
+    const textToProcess = inputText.trim().slice(0, MAX_INPUT_LENGTH);
     const userMsg = { id: Date.now(), sender: 'user', text: textToProcess };
-    
+
     // Save current messages to pass to API
     const currentMessages = [...messages];
-    
+
     setMessages(prev => [...prev, userMsg]);
     setInputText("");
     setIsTyping(true);
 
-    const aiResponseText = await callMistralAPI(textToProcess, currentMessages);
+    const aiResponseText = await callAI(textToProcess, currentMessages);
 
     setIsTyping(false);
     const aiResponse = {
@@ -151,6 +139,7 @@ function MistralChatInterface({ onOpenSupport, onBack }) {
             placeholder="Demander à Lisanga"
             className="chat-input-field"
             disabled={isTyping}
+            maxLength={MAX_INPUT_LENGTH}
           />
           {inputText.trim() ? (
             <button className="icon-btn send" onClick={handleSend} aria-label="Envoyer" disabled={isTyping}>

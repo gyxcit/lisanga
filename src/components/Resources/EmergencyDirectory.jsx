@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowLeft, Phone, ShieldAlert, MapPin, Search, X, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ShieldAlert, MapPin, Search, X, ChevronRight } from 'lucide-react';
 import './EmergencyDirectory.css';
 import emergenciesData from '../../data/emergencies.json';
 
